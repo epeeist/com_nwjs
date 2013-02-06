@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+/**
+ * @package    NWJS
+ * @subpackage CSS
+ * @author     Colin Walls {@link }
+ * @author     Created on 11-Apr-2012
+ * @license    GNU/GPL
+ */
+
+form.nwjs div {
+  clear: left;
+  display: block;
+  height: expression('1%');
+  margin: 5px 0 0 0;
+  padding: 1px 3px;
+}
+
+form.nwjs fieldset {
+  border-radius: 7px; 
+  border: 1px #dddddd solid;
+  padding: 10px;
+  width: 550px;
+  margin-top: 10px;
+}
+
+form.nwjs fieldset legend {
+  border: 1px #7d0000 solid; 
+  color: black; 
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 3px;
+}
+
+/* Label */
+form.nwjs label {
+  width: 140px;
+  padding-left: 20px;
+  margin: 5px;
+  float: left;
+  text-align: left;
+}
+
+/* Input, Textarea */
+form.nwjs input, textarea {
+  margin: 5px;
+  padding: 0px; 
+  float: left;
+}
+
+/* Radio button and checkbox */
+span.multiple label {
+  display: inline;
+  float: left;
+  padding: 0px;
+  margin: 5px; 
+  width: auto;
+}
+
+/* Info icon */
+
+form.nwjs div img {
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.tool-tip {
+  float:left;
+  color: #bbb;
+  width: 265px;
+  z-index: 13000;
+}
+
+.tool-title {
+  font-weight: bold;
+  font-size: 13px;
+  margin: 0;
+  color: #333;
+  padding: 8px 8px 4px;
+  border-bottom: 1px solid #333;
+}
+
+.tool-text {
+  font-size: 11px;
+  padding: 4px 8px 8px;
+  color: #555;
+}

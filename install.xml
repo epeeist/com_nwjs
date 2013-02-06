@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+<name>NWJS</name>
+<creationDate>6th February, 2013</creationDate>
+<author>Colin Walls</author>
+<authorEmail>c.t.walls@btinternet.com</authorEmail>
+<authorUrl></authorUrl>
+<copyright>Copyright Colin Walls 2013. All Rights Reserved</copyright>
+<license>GNU/GPL v2 or later</license>
+<!--  The version string is recorded in the components table -->
+<version>1.00</version>
+<!-- The description is optional and defaults to the name -->
+<description>Results and rankings for the NWJS tournaments</description>
+
+<install>
+  <sql>
+    <file charset="utf8" driver="mysql">install.sql</file>
+  </sql>
+</install>
+
+<uninstall>
+  <sql>
+    <file charset="utf8" driver="mysql">uninstall.sql</file>
+  </sql>
+</uninstall>
+
+<files folder="site">
+  <filename>index.html</filename>
+  <filename>nwjs.php</filename>
+  <filename>controller.php</filename>
+  <folder>models</folder>
+  <folder>views</folder>
+</files>
+
+<languages>
+  <language tag="en-GB">languages/en-GB.com_nwjs.ini</language>
+</languages>
+
+<administration>
+  <menu>NWJS</menu>
+  <submenu>
+    <menu link="option=com_nwjs&amp;view=tournaments">Tournaments</menu>
+    <menu link="option=com_categories&amp;extension=com_nwjs">Competition Categories</menu>
+    <menu link="option=com_nwjs&amp;view=fencers">Fencers</menu>
+    <menu link="option=com_nwjs&amp;view=clubs">Clubs</menu>
+    <menu link="option=com_nwjs&amp;view=clubs">Upload Results</menu>
+    <menu link="option=com_nwjs&amp;view=clubs">Download Rankings</menu>
+  </submenu>
+
+  <!-- Administration Main File Copy Section -->
+  <files folder="admin">
+    <filename>index.html</filename>
+    <filename>nwjs.php</filename>
+    <filename>controller.php</filename>
+    <filename>config.xml</filename>
+    <filename>access.xml</filename>
+    <folder>models</folder>
+    <folder>controllers</folder>
+    <folder>views</folder>
+    <folder>tables</folder>
+    <filename>install.sql</filename>
+    <filename>uninstall.sql</filename>
+  </files>
+  
+  <languages>
+    <language tag="en-GB">languages/en-GB.com_nwjs.ini</language>
+    <language tag="en-GB">languages/en-GB.com_nwjs.sys.ini</language>
+  </languages>
+</administration>
+</extension>

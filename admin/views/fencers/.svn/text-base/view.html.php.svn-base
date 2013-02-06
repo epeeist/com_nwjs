@@ -1,0 +1,85 @@
+<?php
+/**
+ * @package    NWJS
+ * @subpackage Views
+ * @author     Colin Walls {@link }
+ * @author     Created on 11-Apr-2012
+ * @license    GNU/GPL
+ */
+
+//-- No direct access
+defined('_JEXEC') || die('=;)');
+
+jimport('joomla.application.component.view');
+
+/**
+ * HTML View class for the Tournaments part of the NWJS Component.
+ *
+ * @package    NWJS
+ * @subpackage Views
+ */
+class NWJSViewTournaments extends JView {
+  /**
+   * Tournaments view display method
+   *
+   * @param null $tpl
+   *
+   * @return void
+   */
+  public function display($tpl = null) {
+    //-- Get data from the model
+    $this->items = $this->get('Items');
+
+    //-- Get a JPagination object
+    $this->pagination = $this->get('Pagination');
+    
+    $h = fopen("/tmp/view", "w");
+    $t = print_r($this->pagination, true);
+    fprintf($h, "Pagination object is:\n$t\n");
+    $t = print_r($this, true);
+    fprintf($h, "Full View Object is\n$t\n");
+    fclose($h);
+    
+    // Add the tool bar
+    $this->addToolBar();
+
+    // Check for errors
+    $errors = $this->get('Errors');
+
+    if(count($errors)) {
+      JFactory::getApplication()->enqueueMessage(implode('<br />', $errors), 'error');
+
+      return;
+    }
+
+    // Set the display
+    parent::display($tpl);
+
+    // Set the document
+    $this->setDocument();
+  }//function
+
+  /**
+   * Setting the toolbar
+   */
+  protected function addToolBar() {
+    JToolBarHelper::title(JText::_('COM_NWJS_MANAGER_TOURNAMENTS'), 'nwjs');
+
+    JToolBarHelper::addNew('tournament.add');
+    JToolBarHelper::editList('tournament.edit');
+    JToolBarHelper::deleteList('', 'tournaments.delete');
+
+    // CSS class for the 48x48 toolbar icon
+    JFactory::getDocument()->addStyleDeclaration('.icon-48-nwjs' . 
+      '{background-image: url(components/com_nwjs/assets/images/com_nwjs-48.png)}');
+  }//function
+
+  /**
+   * Method to set up the document properties
+   *
+   * @return void
+   */
+  protected function setDocument() {
+    JFactory::getDocument()->setTitle(JText::_('COM_NWJS_TOURNAMENTS_ADMINISTRATION'));
+  }//function
+}//class

@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+/**                                        
+ * CSS for both the Mootools Zebra tables and Accordion effects
+ */                                                            
+
+/*
+ * Zebra Tables
+ */            
+
+.highlight { 
+  background:#d5fcdc; 
+}                     
+
+.even { 
+  background:#fff; 
+}                  
+
+.mo { 
+  background:#e3f1fb; 
+}                     
+
+.odd {
+background:#eee;
+}
+
+.zebra th {
+  padding:5px;
+  background:#ddd;
+  border-bottom:1px solid #999;
+  text-align:left;
+  font-weight:bold;
+}
+
+.zebra td {
+  padding:5px 20px 5px 5px;
+  border-bottom:1px solid #ddd;
+}
+
+/*
+ * Accordion
+ */
+
+.jpane-toggler  span {
+  background: transparent url(../images/rightArrow.png) 5px 50% no-repeat;
+  padding-left: 20px;
+}
+
+.jpane-toggler-down span {
+  background: transparent url(../images/downArrow.png) 5px 50% no-repeat;
+  padding-left: 20px; 
+}
+
+.jpane-toggler-down {
+  border-bottom: 1px solid #ccc;
+}
